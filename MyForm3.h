@@ -39,30 +39,39 @@ namespace gestion {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::TextBox^ textBox6;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+
+
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox3;
+
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ textBox7;
+
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox8;
+
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::TextBox^ textBox9;
+
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::ComponentModel::IContainer^ components;
 
 	protected:
@@ -88,30 +97,30 @@ namespace gestion {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -157,38 +166,6 @@ namespace gestion {
 			this->dataGridView1->Size = System::Drawing::Size(414, 208);
 			this->dataGridView1->TabIndex = 41;
 			// 
-			// textBox6
-			// 
-			this->textBox6->AccessibleName = L"textBox5";
-			this->textBox6->Location = System::Drawing::Point(12, 191);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(143, 20);
-			this->textBox6->TabIndex = 40;
-			// 
-			// textBox5
-			// 
-			this->textBox5->AccessibleName = L"textBox1";
-			this->textBox5->Location = System::Drawing::Point(12, 39);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(143, 20);
-			this->textBox5->TabIndex = 39;
-			// 
-			// textBox4
-			// 
-			this->textBox4->AccessibleName = L"textBox2";
-			this->textBox4->Location = System::Drawing::Point(12, 77);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(143, 20);
-			this->textBox4->TabIndex = 38;
-			// 
-			// textBox1
-			// 
-			this->textBox1->AccessibleName = L"textBox6";
-			this->textBox1->Location = System::Drawing::Point(12, 229);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(143, 20);
-			this->textBox1->TabIndex = 37;
-			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
@@ -224,17 +201,9 @@ namespace gestion {
 			this->label6->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
 			this->label6->Location = System::Drawing::Point(54, 138);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(64, 12);
+			this->label6->Size = System::Drawing::Size(71, 12);
 			this->label6->TabIndex = 34;
-			this->label6->Text = L"Montat_HT";
-			// 
-			// textBox3
-			// 
-			this->textBox3->AccessibleName = L"textBox3";
-			this->textBox3->Location = System::Drawing::Point(12, 115);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(143, 20);
-			this->textBox3->TabIndex = 33;
+			this->label6->Text = L"Montant_HT";
 			// 
 			// label5
 			// 
@@ -248,14 +217,6 @@ namespace gestion {
 			this->label5->Size = System::Drawing::Size(96, 12);
 			this->label5->TabIndex = 32;
 			this->label5->Text = L"Quantite_Article";
-			// 
-			// textBox2
-			// 
-			this->textBox2->AccessibleName = L"textBox4";
-			this->textBox2->Location = System::Drawing::Point(12, 153);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(143, 20);
-			this->textBox2->TabIndex = 31;
 			// 
 			// label4
 			// 
@@ -304,14 +265,6 @@ namespace gestion {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm3::button1_Click);
 			// 
-			// textBox7
-			// 
-			this->textBox7->AccessibleName = L"textBox7";
-			this->textBox7->Location = System::Drawing::Point(12, 267);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(143, 20);
-			this->textBox7->TabIndex = 46;
-			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
@@ -324,14 +277,6 @@ namespace gestion {
 			this->label2->Size = System::Drawing::Size(86, 12);
 			this->label2->TabIndex = 45;
 			this->label2->Text = L"Nature_Article";
-			// 
-			// textBox8
-			// 
-			this->textBox8->AccessibleName = L"textBox8";
-			this->textBox8->Location = System::Drawing::Point(12, 305);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(143, 20);
-			this->textBox8->TabIndex = 48;
 			// 
 			// label9
 			// 
@@ -346,14 +291,6 @@ namespace gestion {
 			this->label9->TabIndex = 47;
 			this->label9->Text = L"Couleur_Article";
 			// 
-			// textBox9
-			// 
-			this->textBox9->AccessibleName = L"textBox9";
-			this->textBox9->Location = System::Drawing::Point(10, 343);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(143, 20);
-			this->textBox9->TabIndex = 50;
-			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
@@ -361,7 +298,7 @@ namespace gestion {
 			this->label10->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 8.25F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->label10->Location = System::Drawing::Point(8, 328);
+			this->label10->Location = System::Drawing::Point(12, 328);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(157, 12);
 			this->label10->TabIndex = 49;
@@ -387,33 +324,96 @@ namespace gestion {
 			this->dataGridView2->Size = System::Drawing::Size(414, 208);
 			this->dataGridView2->TabIndex = 52;
 			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(30, 39);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(131, 20);
+			this->textBox1->TabIndex = 53;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(30, 77);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(131, 20);
+			this->textBox2->TabIndex = 54;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(30, 115);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(131, 20);
+			this->textBox3->TabIndex = 55;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(30, 153);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(131, 20);
+			this->textBox4->TabIndex = 56;
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(30, 191);
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(131, 20);
+			this->textBox5->TabIndex = 57;
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(30, 229);
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(131, 20);
+			this->textBox6->TabIndex = 58;
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(30, 267);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(131, 20);
+			this->textBox7->TabIndex = 59;
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(30, 305);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(131, 20);
+			this->textBox8->TabIndex = 60;
+			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(30, 343);
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(131, 20);
+			this->textBox9->TabIndex = 61;
+			// 
 			// MyForm3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(617, 365);
+			this->Controls->Add(this->textBox9);
+			this->Controls->Add(this->textBox8);
+			this->Controls->Add(this->textBox7);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button5);
-			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->label9);
-			this->Controls->Add(this->textBox7);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label1);
@@ -433,7 +433,7 @@ namespace gestion {
 	private: System::Void MyForm3_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 		String^ reference = textBox1->Text;
@@ -442,11 +442,12 @@ namespace gestion {
 		double montant_ht = double::Parse(textBox4->Text);
 		double montant_tva = double::Parse(textBox5->Text);
 		double montant_ttc = double::Parse(textBox6->Text);
-		int seuil = Int32::Parse(textBox7->Text);
-		String^ nature = textBox8->Text;
-		String^ couleur = textBox9->Text;
+		String^ nature = textBox7->Text;
+		String^ couleur = textBox8->Text;
+		int seuil = Int32::Parse(textBox9->Text);
+		
 
-		SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO Article (ReferenceArticle,Nom_Article,Quantite_Article,Montant_HT,Montant_TVA,Montant_TTC, Nature_Article, Couleur_Article,seuil_reapprovisionnement) VALUES('" + reference + "', '" + designation + "', " + quantite + ", " + montant_ht + ", " + montant_tva + ", " + montant_ttc + ", " + seuil + ", '" + nature + "', '" + couleur + "'); ", conDataBase);
+		SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO Article (ReferenceArticle,Nom_Article,Quantite_Article,Montant_HT,Montant_TVA,Montant_TTC, Nature_Article, Couleur_Article,Seuil_reapprovisionnement) VALUES('" + reference + "', '" + designation + "', " + quantite + ", " + montant_ht + ", " + montant_tva + ", " + montant_ttc + ", '" + nature + "', '" + couleur + "', '" + seuil + "'); ", conDataBase);
 		SqlDataReader^ myReader;
 		try {
 
@@ -461,7 +462,7 @@ namespace gestion {
 		}
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM Article", conDataBase);
 	DataTable^ data = gcnew DataTable();
@@ -474,9 +475,9 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ reference = textBox1->Text;
-	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-	SqlCommand^ cmdDataBase = gcnew SqlCommand("SELECT * FROM Article WHERE reference_article = '" + reference + "' ", conDataBase);
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("SELECT * FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
 	conDataBase->Open();
 	SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
 
@@ -489,33 +490,35 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		textBox4->Text = Convert::ToString(myReader->GetDouble(3));
 		textBox5->Text = Convert::ToString(myReader->GetDouble(4));
 		textBox6->Text = Convert::ToString(myReader->GetDouble(5));
-		textBox7->Text = Convert::ToString(myReader->GetInt32(6));
+		textBox7->Text = myReader->GetString(6);
 		textBox8->Text = myReader->GetString(7);
-		textBox9->Text = myReader->GetString(8);
+		textBox9->Text = Convert::ToString(myReader->GetInt32(8));
 	}
+
 	myReader->Close();
-	SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM Article WHERE reference_article = '" + reference + "' ", conDataBase);
+	SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
 	DataTable^ data = gcnew DataTable();
 	data->Clear();
 	adapter->Fill(data);
 	bindingSource2->DataSource = data;
 	dataGridView2->DataSource = bindingSource2;
+
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-
+	
 	String^ reference = textBox1->Text;
 	String^ designation = textBox2->Text;
 	int quantite = Int32::Parse(textBox3->Text);
 	double montant_ht = double::Parse(textBox4->Text);
 	double montant_tva = double::Parse(textBox5->Text);
 	double montant_ttc = double::Parse(textBox6->Text);
-	int seuil = Int32::Parse(textBox7->Text);
-	String^ nature = textBox8->Text;
-	String^ couleur = textBox9->Text;
+	String^ nature = textBox7->Text;
+	String^ couleur = textBox8->Text;
+	int seuil = Int32::Parse(textBox9->Text);
 
-	SqlCommand^ cmdDataBase = gcnew SqlCommand("UPDATE Article SET Nom_Article = '" + designation + "',  Quantite_Article = " + quantite + ", Montant_HT = " + montant_ht + ", Montant_TVA = " + montant_tva + ", Montant_TTC = " + montant_ttc + ", seuil_reapprovisionnement = " + seuil + ", Nature_Article = '" + nature + "', Couleur_Article = '" + couleur + "' WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("UPDATE Article SET Nom_Article = '" + designation + "',  Quantite_Article = " + quantite + ", Montant_HT = " + montant_ht + ", Montant_TVA = " + montant_tva + ", Montant_TTC = " + montant_ttc + ", Seuil_reapprovisionnement = " + seuil + ", Nature_Article = '" + nature + "', Couleur_Article = '" + couleur + "' WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
 	SqlDataReader^ myReader;
 	try {
 
@@ -533,7 +536,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 	String^ reference = textBox1->Text;
@@ -543,6 +546,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
 	MessageBox::Show("Article supprimé :'D");
 	conDataBase->Close();
+}
+private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
