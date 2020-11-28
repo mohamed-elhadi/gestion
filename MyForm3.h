@@ -433,7 +433,7 @@ namespace gestion {
 	private: System::Void MyForm3_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=POO;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 		String^ reference = textBox1->Text;
@@ -461,7 +461,7 @@ namespace gestion {
 		}
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM Article", conDataBase);
 	DataTable^ data = gcnew DataTable();
@@ -474,7 +474,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ reference = textBox1->Text;
-	String^ constring = "Data Source=(local);Initial Catalog=POO;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlCommand^ cmdDataBase = gcnew SqlCommand("SELECT * FROM Article WHERE reference_article = '" + reference + "' ", conDataBase);
 	conDataBase->Open();
@@ -502,7 +502,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	dataGridView2->DataSource = bindingSource2;
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 	String^ reference = textBox1->Text;
@@ -533,7 +533,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=POO-PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 	String^ reference = textBox1->Text;
