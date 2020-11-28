@@ -1,5 +1,5 @@
 #pragma once
-
+using namespace System::Data::SqlClient;
 namespace gestion {
 
 	using namespace System;
@@ -146,6 +146,7 @@ namespace gestion {
 			this->button2->TabIndex = 42;
 			this->button2->Text = L"Supprimer";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm3::button2_Click);
 			// 
 			// dataGridView1
 			// 
@@ -390,7 +391,7 @@ namespace gestion {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(610, 365);
+			this->ClientSize = System::Drawing::Size(617, 365);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->textBox9);
@@ -513,6 +514,35 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	int seuil = Int32::Parse(textBox7->Text);
 	String^ nature = textBox8->Text;
 	String^ couleur = textBox9->Text;
+
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("UPDATE Article SET Nom_Article = '" + designation + "',  Quantite_Article = " + quantite + ", Montant_HT = " + montant_ht + ", Montant_TVA = " + montant_tva + ", Montant_TTC = " + montant_ttc + ", seuil_reapprovisionnement = " + seuil + ", Nature_Article = '" + nature + "', Couleur_Article = '" + couleur + "' WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
+	SqlDataReader^ myReader;
+	try {
+
+		conDataBase->Open();
+		myReader = cmdDataBase->ExecuteReader();
+		MessageBox::Show("Article modifié :'D");
+		conDataBase->Close();
+	}
+	catch (Exception^ ex) {
+
+		MessageBox::Show(ex->Message);
+
+	}
+
+
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ constring = "Data Source=(local);Initial Catalog=POO;Integrated Security=True";
+	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
+
+	String^ reference = textBox1->Text;
+	SqlCommand^ cmdDataBase = gcnew SqlCommand("DELETE FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
+
+	conDataBase->Open();
+	SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
+	MessageBox::Show("Article supprimé :'D");
+	conDataBase->Close();
 }
 };
 }
