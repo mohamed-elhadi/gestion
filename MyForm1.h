@@ -72,6 +72,7 @@ namespace gestion {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
 	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -142,6 +143,7 @@ namespace gestion {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
@@ -354,13 +356,23 @@ namespace gestion {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(34, 14);
+			this->button5->Location = System::Drawing::Point(12, 9);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(75, 23);
+			this->button5->Size = System::Drawing::Size(120, 23);
 			this->button5->TabIndex = 36;
-			this->button5->Text = L"afficher tout ";
+			this->button5->Text = L"afficher tout les clients ";
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm1::button5_Click);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(12, 33);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->TabIndex = 37;
+			this->button6->Text = L"clear all";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm1::button6_Click);
 			// 
 			// MyForm1
 			// 
@@ -369,6 +381,7 @@ namespace gestion {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(610, 350);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox7);
@@ -415,10 +428,13 @@ namespace gestion {
 
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ condatabase = gcnew SqlConnection(constring);
-
-		String^ nom = textBox1->Text;
+		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
+			MessageBox::Show("vous devez remplir tous les champs");
+		}
+		else {
+String^ nom = textBox1->Text;
 		String^ prenom = textBox2->Text;
 		String^ adresseL = textBox3->Text;
 		String^ adresseF = textBox4->Text;
@@ -427,13 +443,21 @@ namespace gestion {
 
 		SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO  client (Nom_c, Prenom_c , Date_De_Naissaince , Date_Premier_Achat, Adresse_Livraison, Adresse_Facturation ) values('" + nom + "','" + prenom + "','" + date + "','" + date2 + "','" + adresseF + "','" + adresseL + "');", condatabase);
 		SqlDataReader^ myReader;
+		
+		
 		try {
 			condatabase->Open();
 			myReader = cmdDataBase->ExecuteReader();
 			MessageBox::Show("client  enregistré :'D");
 		}
 		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message);
+			if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
+				MessageBox::Show("vous devez remplir tous les champs");
+			}
+               
+		}	
+
+			
 		}
 
 
@@ -443,7 +467,7 @@ namespace gestion {
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 		String^ ID = textBox7->Text;
@@ -470,8 +494,9 @@ namespace gestion {
 
 
 		String^ reference = textBox7->Text;
-		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
+
 		SqlCommand^ cmdDataBase = gcnew SqlCommand("SELECT * FROM client WHERE Num_c = '" + reference + "' ", conDataBase);
 		conDataBase->Open();
 		SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
@@ -503,7 +528,7 @@ namespace gestion {
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ condatabase = gcnew SqlConnection(constring);
 		String^ id = textBox7->Text;
 		String^ nom = textBox1->Text;
@@ -533,7 +558,7 @@ namespace gestion {
 
 
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 		SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM client", conDataBase);
 		DataTable^ data = gcnew DataTable();
@@ -543,5 +568,15 @@ namespace gestion {
 		bindingSource1->DataSource = data;
 		dataGridView1->DataSource = bindingSource1;
 	}
-	};
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox1->Text = "";
+		textBox2->Text = "";
+		textBox3->Text = "";
+		textBox4->Text = "";
+		textBox5->Text = "";
+		textBox6->Text = "";
+		textBox7->Text = "";
+	
+	}
+};
 }

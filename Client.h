@@ -1,24 +1,37 @@
 #include "Pch.h"
-class Client
-{
-private:
-	string nom, prenom, adresse_livraison, adresse_facturation,date_naissance,date_premier_achat;
-public:
-	Client();
-	Client(string nom, string prenom, string adresse_livraison, string adresse_facturation, string date_naissance, string date_premier_achat);
-	void setnom(string nom);
-	string getnom();
-	void setprenom(string prenom);
-	string getprenom();
-	void setadresse_liv(string adresse_livraison);
-	string getadresse_liv();
-	void setadresse_fact(string adresse_facturation);
-	string getadresse_fact();
-	void setdate_naissace(string date_naissance);
-	string getdate_naissance();
-	void setdate_premier(string date_premier_achat);
-	string getdate_premier();
+using namespace System::Data;
+using namespace System::Data::SqlClient;
+using namespace System::Xml;
+using namespace System;
+
+namespace NS_Composants {
+
+	ref class Client
+	{
+	private:
+		String^ nom;
+		String^ prenom;
+		String^ adresse_livraison;
+		String^ adresse_facturation;
+		String^ date_naissance;
+		String^ date_premier_achat;
+	public:
+		Client();
+		Client(String^ nom, String^ prenom, String^ adresse_livraison, String^ adresse_facturation, String^ date_naissance, String^ date_premier_achat);
+		void setnom(String^ nom);
+		String^ getnom();
+		void setprenom(String^ prenom);
+		String^ getprenom();
+		void setadresse_liv(String^ adresse_livraison);
+		String^ getadresse_liv();
+		void setadresse_fact(String^ adresse_facturation);
+		String^ getadresse_fact();
+		void setdate_naissace(String^ date_naissance);
+		String^ getdate_naissance();
+		void setdate_premier(String^ date_premier_achat);
+		String^ getdate_premier();
 
 
-};
+	};
 
+}

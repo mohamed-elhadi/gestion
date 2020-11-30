@@ -1,69 +1,76 @@
+
+
 #include "Client.h"
 
-Client::Client()
-{
-}
 
-Client::Client(string nom, string prenom, string adresse_livraison, string adresse_facturation, string date_naissance, string date_premier_achat) :nom(nom),prenom(prenom),adresse_livraison(adresse_livraison),adresse_facturation(adresse_facturation),date_naissance(date_naissance),date_premier_achat(date_premier_achat)
-{
-}
 
-void Client::setnom(string nom)
-{
-	this->nom = nom;
-}
+namespace NS_Composants {
+	Client::Client()
+	{
 
-string Client::getnom()
-{
-	return string(nom);
-}
+	}
 
-void Client::setprenom(string prenom)
-{
-	this->prenom = prenom;
-}
+	Client::Client(String^ nom, String^ prenom, String^ adresse_livraison, String^ adresse_facturation, String^ date_naissance, String^ date_premier_achat) :nom(nom), prenom(prenom), adresse_livraison(adresse_livraison), adresse_facturation(adresse_facturation), date_naissance(date_naissance), date_premier_achat(date_premier_achat)
+	{
+	}
 
-string Client::getprenom()
-{
-	return string(prenom);
-}
+	void Client::setnom(String^ nom)
+	{
+		this->nom = nom;
+	}
 
-void Client::setadresse_liv(string adresse_livraison)
-{
-	this->adresse_livraison = adresse_livraison;
-}
+	String^ Client::getnom()
+	{
+		return this->nom;
+	}
 
-string Client::getadresse_liv()
-{
-	return string(adresse_livraison);
-}
+	void Client::setprenom(String^ prenom)
+	{
+		this->prenom = prenom;
+	}
 
-void Client::setadresse_fact(string adresse_facturation)
-{
-	this->adresse_facturation;
-}
+	String^ Client::getprenom()
+	{
+		return  this->prenom;
+	}
 
-string Client::getadresse_fact()
-{
-	return string(adresse_facturation);
-}
+	void Client::setadresse_liv(String^ adresse_livraison)
+	{
+		this->adresse_livraison = adresse_livraison;
+	}
 
-void Client::setdate_naissace(string date_naissance)
-{
-	this->date_naissance = date_naissance;
-}
+	String^ Client::getadresse_liv()
+	{
+		return this->adresse_livraison;
+	}
 
-string Client::getdate_naissance()
-{
-	return string(date_naissance);
-}
+	void Client::setadresse_fact(String^ adresse_facturation)
+	{
+		this->adresse_facturation;
+	}
 
-void Client::setdate_premier(string date_premier_achat)
-{
-	this->date_premier_achat=date_premier_achat;
-}
+	String^ Client::getadresse_fact()
+	{
+		return this->adresse_facturation;
+	}
 
-string Client::getdate_premier()
-{
-	return string(date_premier_achat);
+	void Client::setdate_naissace(String^ date_naissance)
+	{
+		this->date_naissance = date_naissance;
+	}
+
+	String^ Client::getdate_naissance()
+	{
+		return this->date_naissance;
+	}
+
+	void Client::setdate_premier(String^ date_premier_achat)
+	{
+		this->date_premier_achat = date_premier_achat;
+	}
+
+	String^ Client::getdate_premier()
+	{
+		return this->date_premier_achat;
+	}
 }

@@ -72,6 +72,7 @@ namespace gestion {
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::Button^ button6;
 	private: System::ComponentModel::IContainer^ components;
 
 	protected:
@@ -121,6 +122,7 @@ namespace gestion {
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -387,11 +389,22 @@ namespace gestion {
 			this->textBox9->Size = System::Drawing::Size(131, 20);
 			this->textBox9->TabIndex = 61;
 			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(525, 48);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(75, 23);
+			this->button6->TabIndex = 62;
+			this->button6->Text = L"clear all";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm3::button6_Click);
+			// 
 			// MyForm3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(617, 365);
+			this->Controls->Add(this->button6);
 			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->textBox8);
 			this->Controls->Add(this->textBox7);
@@ -435,7 +448,11 @@ namespace gestion {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-
+		
+		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
+			MessageBox::Show("vous devez remplir tous les champs");
+		}
+		else {
 		String^ reference = textBox1->Text;
 		String^ designation = textBox2->Text;
 		int quantite = Int32::Parse(textBox3->Text);
@@ -459,6 +476,7 @@ namespace gestion {
 
 			MessageBox::Show(ex->Message);
 
+		}
 		}
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -538,7 +556,8 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-
+	
+	
 	String^ reference = textBox1->Text;
 	SqlCommand^ cmdDataBase = gcnew SqlCommand("DELETE FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
 
@@ -548,6 +567,18 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	conDataBase->Close();
 }
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox1->Text = "";
+	textBox2->Text = "";
+	textBox3->Text = "";
+	textBox4->Text = "";
+	textBox5->Text = "";
+	textBox6->Text = "";
+	textBox7->Text = "";
+	textBox8->Text = "";
+	textBox9->Text = "";
+	
 }
 };
 }
