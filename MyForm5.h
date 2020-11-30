@@ -15,8 +15,17 @@ namespace gestion {
 	public ref class MyForm5 : public System::Windows::Forms::Form
 	{
 	public:
+Form^ retour;
 		MyForm5(void)
 		{
+			InitializeComponent();
+			//
+			//TODO: ajoutez ici le code du constructeur
+			//
+		}
+		MyForm5(Form^ r)
+		{
+			retour = r;
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
@@ -34,6 +43,8 @@ namespace gestion {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ button1;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,13 +59,25 @@ namespace gestion {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(375, 125);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm5::button1_Click);
 			// 
 			// MyForm5
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(610, 350);
+			this->Controls->Add(this->button1);
 			this->Name = L"MyForm5";
 			this->Text = L"MyForm5";
 			this->Load += gcnew System::EventHandler(this, &MyForm5::MyForm5_Load);
@@ -63,6 +86,10 @@ namespace gestion {
 		}
 #pragma endregion
 	private: System::Void MyForm5_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		retour->Show();
 	}
 	};
 }

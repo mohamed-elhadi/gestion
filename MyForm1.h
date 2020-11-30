@@ -18,6 +18,7 @@ namespace gestion {
 	public ref class MyForm1 : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ retour;
 		MyForm1(void)
 		{
 			InitializeComponent();
@@ -25,6 +26,15 @@ namespace gestion {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
+		MyForm1(Form ^r)
+		{
+			retour = r;
+			InitializeComponent();
+			//
+			//TODO: ajoutez ici le code du constructeur
+			//
+		}
+		
 
 	protected:
 		/// <summary>
@@ -73,6 +83,8 @@ namespace gestion {
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -144,6 +156,7 @@ namespace gestion {
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
@@ -374,6 +387,16 @@ namespace gestion {
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm1::button6_Click);
 			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(138, 30);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(75, 23);
+			this->button7->TabIndex = 38;
+			this->button7->Text = L"button7";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm1::button7_Click_1);
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -381,6 +404,7 @@ namespace gestion {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(610, 350);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->label2);
@@ -434,7 +458,7 @@ namespace gestion {
 			MessageBox::Show("vous devez remplir tous les champs");
 		}
 		else {
-String^ nom = textBox1->Text;
+		String^ nom = textBox1->Text;
 		String^ prenom = textBox2->Text;
 		String^ adresseL = textBox3->Text;
 		String^ adresseF = textBox4->Text;
@@ -442,24 +466,26 @@ String^ nom = textBox1->Text;
 		String^ date2 = Convert::ToDateTime(textBox6->Text).ToString("dd-MM-yyyy");
 
 		SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO  client (Nom_c, Prenom_c , Date_De_Naissaince , Date_Premier_Achat, Adresse_Livraison, Adresse_Facturation ) values('" + nom + "','" + prenom + "','" + date + "','" + date2 + "','" + adresseF + "','" + adresseL + "');", condatabase);
-		SqlDataReader^ myReader;
-		
-		
-		try {
-			condatabase->Open();
-			myReader = cmdDataBase->ExecuteReader();
-			MessageBox::Show("client  enregistré :'D");
-		}
-		catch (Exception^ ex) {
-			if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
-				MessageBox::Show("vous devez remplir tous les champs");
-			}
-               
-		}	
+				SqlDataReader^ myReader;
+
+
+				try {
+					condatabase->Open();
+					myReader = cmdDataBase->ExecuteReader();
+					MessageBox::Show("client  enregistré :'D");
+				}
+				catch (Exception^ ex) {
+					if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
+						MessageBox::Show("vous devez remplir tous les champs");
+					}
+
+				}
+
 
 			
+			
 		}
-
+		
 
 
 	}
@@ -578,5 +604,12 @@ String^ nom = textBox1->Text;
 		textBox7->Text = "";
 	
 	}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+}
+private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	retour->Show();
+}
 };
 }

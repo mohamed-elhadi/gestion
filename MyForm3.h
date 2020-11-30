@@ -15,6 +15,7 @@ namespace gestion {
 	public ref class MyForm3 : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ retour;
 		MyForm3(void)
 		{
 			InitializeComponent();
@@ -22,7 +23,14 @@ namespace gestion {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-
+		MyForm3(Form^ r)
+		{
+			retour = r;
+			InitializeComponent();
+			//
+			//TODO: ajoutez ici le code du constructeur
+			//
+		}
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -73,6 +81,7 @@ namespace gestion {
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::TextBox^ textBox9;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
 	private: System::ComponentModel::IContainer^ components;
 
 	protected:
@@ -123,6 +132,7 @@ namespace gestion {
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
@@ -399,11 +409,22 @@ namespace gestion {
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm3::button6_Click);
 			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(201, 48);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(75, 23);
+			this->button7->TabIndex = 63;
+			this->button7->Text = L"button7";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm3::button7_Click);
+			// 
 			// MyForm3
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(617, 365);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->textBox9);
 			this->Controls->Add(this->textBox8);
@@ -446,7 +467,7 @@ namespace gestion {
 	private: System::Void MyForm3_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 		
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
@@ -480,7 +501,7 @@ namespace gestion {
 		}
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM Article", conDataBase);
 	DataTable^ data = gcnew DataTable();
@@ -493,7 +514,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ reference = textBox1->Text;
-	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlCommand^ cmdDataBase = gcnew SqlCommand("SELECT * FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
 	conDataBase->Open();
@@ -523,7 +544,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	
 	String^ reference = textBox1->Text;
@@ -554,7 +575,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=POO_PROJET;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	
 	
@@ -579,6 +600,10 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	textBox8->Text = "";
 	textBox9->Text = "";
 	
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	retour->Show();
 }
 };
 }

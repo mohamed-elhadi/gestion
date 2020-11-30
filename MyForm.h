@@ -54,24 +54,35 @@ namespace gestion {
 		/// </summary>
 		void deplacer(int a) {
 			if (a ==1) {
-				MyForm1^ page = gcnew MyForm1;
-				page->Show(); 
+				MyForm1^ page = gcnew MyForm1(this);
+				this->Hide();
+				page->ShowDialog(); 
+
 			}
 			else if (a == 2) {
-				MyForm2^ page = gcnew MyForm2;
-				page->Show();
+				MyForm2^ page = gcnew MyForm2(this);
+				this->Hide();
+
+				page->ShowDialog();
 			}
 			else if (a == 3) {
-				MyForm3^ page = gcnew MyForm3;
-				page->Show();
+				
+				MyForm3^ page = gcnew MyForm3(this);
+				this->Hide();
+
+				page->ShowDialog();
 			}
 			else if (a == 4) {
-				MyForm4^ page = gcnew MyForm4;
-				page->Show();
+				MyForm4^ page = gcnew MyForm4(this);
+				this->Hide();
+
+				page->ShowDialog();
 
 			}
 			else if (a == 5) {
-				MyForm5^ page = gcnew MyForm5;
+				MyForm5^ page = gcnew MyForm5(this);
+				this->Hide();
+				page->ShowDialog();
 			}
 
 	}
@@ -231,6 +242,9 @@ namespace gestion {
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	deplacer(1);
+
+
+
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	deplacer(2);

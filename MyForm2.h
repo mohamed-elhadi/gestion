@@ -16,8 +16,17 @@ namespace gestion {
 	public ref class MyForm2 : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ retour;
 		MyForm2(void)
 		{
+			InitializeComponent();
+			//
+			//TODO: ajoutez ici le code du constructeur
+			//
+		}
+		MyForm2(Form^ r)
+		{
+			retour = r;
 			InitializeComponent();
 			//
 			//TODO: ajoutez ici le code du constructeur
@@ -74,6 +83,7 @@ namespace gestion {
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::BindingSource^ bindingSource2;
 	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -126,6 +136,7 @@ namespace gestion {
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->bindingSource2 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox2->SuspendLayout();
@@ -402,11 +413,22 @@ namespace gestion {
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm2::button6_Click);
 			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(144, 27);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(75, 23);
+			this->button7->TabIndex = 72;
+			this->button7->Text = L"button7";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm2::button7_Click);
+			// 
 			// MyForm2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(610, 371);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->label7);
@@ -510,15 +532,12 @@ namespace gestion {
 		String^ id = textBox7->Text;
 
 
-
-		SqlCommand^ cmdDataBase = gcnew SqlCommand("UPDATE Personnel SET  Nom_p = '" + nom_p + "', Prenom_p ='" + prenom_p + "' , Date_Eembauche = '" + dateEM + "' , Adresse = '" + adresse_p + "' WHERE ID = " + id + " ;", conDataBase);
-		SqlCommand^ cmdDataBase1 = gcnew SqlCommand("UPDATE Personnel SET ID_Personnel=(SELECT ID FROM Personnel WHERE Nom_p='" + nom_E + "' AND Prenom_p='" + prenom_E + "') WHERE Nom_p='" + nom_p + "' AND Prenom_p='" + prenom_p + "' ;",conDataBase);
-
+		SqlCommand^ cmdDataBase = gcnew SqlCommand("UPDATE Personnel SET  Nom_p = '" + nom_p + "', Prenom_p ='" + prenom_p + "' , Date_Eembauche = '" + dateEM + "' , Adresse = '" + adresse_p + "',ID_Personnel=(SELECT ID FROM Personnel WHERE Nom_p='" + nom_E + "' AND Prenom_p='" + prenom_E + "') WHERE ID = " + id + " ;", conDataBase);
+		
 		SqlDataReader^ myReader;
 		try {
 			conDataBase->Open();
 			myReader = cmdDataBase->ExecuteReader();
-			myReader = cmdDataBase1->ExecuteReader();
 
 			MessageBox::Show("client modifié :'D");
 			conDataBase->Close();
@@ -577,6 +596,10 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	radioButton1->Checked = false;
 	radioButton2->Checked = true;
 	radioButton2->Checked = false;
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	retour->Show();
 }
 };
 }
