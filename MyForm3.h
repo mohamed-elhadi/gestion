@@ -575,17 +575,21 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
-	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
-	
-	
-	String^ reference = textBox1->Text;
-	SqlCommand^ cmdDataBase = gcnew SqlCommand("DELETE FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
+	if (MessageBox::Show("Êtes vous sûr de vouloir continuer ?", "Warning", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
-	conDataBase->Open();
-	SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
-	MessageBox::Show("Article supprimé :'D");
-	conDataBase->Close();
+
+		String^ reference = textBox1->Text;
+		SqlCommand^ cmdDataBase = gcnew SqlCommand("DELETE FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
+
+		conDataBase->Open();
+		SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
+		MessageBox::Show("Article supprimé :'D");
+		conDataBase->Close();
+	}
+	else {};
+	
 }
 private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }

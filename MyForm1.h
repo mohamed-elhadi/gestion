@@ -26,7 +26,7 @@ namespace gestion {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-		MyForm1(Form ^r)
+		MyForm1(Form^ r)
 		{
 			retour = r;
 			InitializeComponent();
@@ -34,7 +34,7 @@ namespace gestion {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
-		
+
 
 	protected:
 		/// <summary>
@@ -84,6 +84,18 @@ namespace gestion {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+
+
+
+
+
+
+
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -157,6 +169,10 @@ namespace gestion {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
@@ -176,7 +192,7 @@ namespace gestion {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(184, 302);
+			this->button1->Location = System::Drawing::Point(183, 379);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(99, 30);
 			this->button1->TabIndex = 0;
@@ -204,7 +220,7 @@ namespace gestion {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->label4->Location = System::Drawing::Point(19, 295);
+			this->label4->Location = System::Drawing::Point(14, 372);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(136, 14);
 			this->label4->TabIndex = 10;
@@ -217,7 +233,7 @@ namespace gestion {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->label5->Location = System::Drawing::Point(24, 146);
+			this->label5->Location = System::Drawing::Point(19, 189);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(113, 14);
 			this->label5->TabIndex = 12;
@@ -230,7 +246,7 @@ namespace gestion {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->label6->Location = System::Drawing::Point(9, 197);
+			this->label6->Location = System::Drawing::Point(4, 278);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(146, 14);
 			this->label6->TabIndex = 14;
@@ -244,7 +260,7 @@ namespace gestion {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
-			this->label7->Location = System::Drawing::Point(24, 244);
+			this->label7->Location = System::Drawing::Point(19, 321);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(119, 14);
 			this->label7->TabIndex = 16;
@@ -266,14 +282,14 @@ namespace gestion {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(184, 59);
+			this->dataGridView1->Location = System::Drawing::Point(183, 59);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(414, 221);
+			this->dataGridView1->Size = System::Drawing::Size(414, 314);
 			this->dataGridView1->TabIndex = 23;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(499, 302);
+			this->button2->Location = System::Drawing::Point(498, 379);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(99, 30);
 			this->button2->TabIndex = 24;
@@ -283,7 +299,7 @@ namespace gestion {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(394, 302);
+			this->button3->Location = System::Drawing::Point(393, 379);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(99, 30);
 			this->button3->TabIndex = 25;
@@ -293,7 +309,7 @@ namespace gestion {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(289, 302);
+			this->button4->Location = System::Drawing::Point(288, 379);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(99, 30);
 			this->button4->TabIndex = 26;
@@ -317,28 +333,28 @@ namespace gestion {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(12, 163);
+			this->textBox3->Location = System::Drawing::Point(7, 206);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(142, 20);
 			this->textBox3->TabIndex = 29;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(13, 214);
+			this->textBox4->Location = System::Drawing::Point(8, 295);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(142, 20);
 			this->textBox4->TabIndex = 30;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(13, 260);
+			this->textBox5->Location = System::Drawing::Point(8, 337);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(142, 20);
 			this->textBox5->TabIndex = 31;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(12, 312);
+			this->textBox6->Location = System::Drawing::Point(7, 389);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(142, 20);
 			this->textBox6->TabIndex = 32;
@@ -346,9 +362,9 @@ namespace gestion {
 			// dataGridView2
 			// 
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(184, 59);
+			this->dataGridView2->Location = System::Drawing::Point(183, 59);
 			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->Size = System::Drawing::Size(414, 221);
+			this->dataGridView2->Size = System::Drawing::Size(414, 314);
 			this->dataGridView2->TabIndex = 33;
 			// 
 			// textBox7
@@ -393,9 +409,70 @@ namespace gestion {
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(75, 23);
 			this->button7->TabIndex = 38;
-			this->button7->Text = L"button7";
+			this->button7->Text = L"Retour";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &MyForm1::button7_Click_1);
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(48) {
+				L"ADRAR", L"CHLEF", L"LAGHOUAT", L"OUM BOUAGHI",
+					L"BATNA", L"BEJAIA", L"BISKRA", L"BECHAR", L"BLIDA", L"BOUIRA", L"TAMANRASSET", L"TEBESSA", L"TLEMCEN", L"TIARET", L"TIZI OUZOU",
+					L"ALGER", L"DJELFA", L"JIJEL", L"SETIF", L"SAIDA", L"SKIKDA", L"SIDI BEL ABBES", L"ANNABA", L"GUELMA", L"CONSTANTINE", L"MEDEA",
+					L"MOSTAGANEM", L"M\'SILA", L"MASCARA", L"OUARGLA", L"ORAN", L"EL BAYDH", L"ILLIZI", L"BORDJ BOU ARRERIDJ", L"BOUMERDES", L"EL TAREF",
+					L"TINDOUF", L"TISSEMSILT", L"EL OUED40", L"KHENCHLA41", L"SOUK AHRASS", L"TIPAZA", L"MILA", L"AÏN DEFLA", L"NÂAMA", L"AÏN TEMOUCHENT",
+					L"GHARDAÏA", L"RELIZANE"
+			});
+			this->comboBox1->Location = System::Drawing::Point(13, 249);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(143, 21);
+			this->comboBox1->TabIndex = 39;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::comboBox1_SelectedIndexChanged);
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::SystemColors::Info;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->label9->Location = System::Drawing::Point(19, 232);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(108, 14);
+			this->label9->TabIndex = 40;
+			this->label9->Text = L"la vile Facturation";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::SystemColors::Info;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::SystemColors::InactiveCaptionText;
+			this->label10->Location = System::Drawing::Point(24, 141);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(96, 14);
+			this->label10->TabIndex = 41;
+			this->label10->Text = L"la vile Livraison";
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(48) {
+				L"ADRAR", L"CHLEF", L"LAGHOUAT", L"OUM BOUAGHI",
+					L"BATNA", L"BEJAIA", L"BISKRA", L"BECHAR", L"BLIDA", L"BOUIRA", L"TAMANRASSET", L"TEBESSA", L"TLEMCEN", L"TIARET", L"TIZI OUZOU",
+					L"ALGER", L"DJELFA", L"JIJEL", L"SETIF", L"SAIDA", L"SKIKDA", L"SIDI BEL ABBES", L"ANNABA", L"GUELMA", L"CONSTANTINE", L"MEDEA",
+					L"MOSTAGANEM", L"M\'SILA", L"MASCARA", L"OUARGLA", L"ORAN", L"EL BAYDH", L"ILLIZI", L"BORDJ BOU ARRERIDJ", L"BOUMERDES", L"EL TAREF",
+					L"TINDOUF", L"TISSEMSILT", L"EL OUED40", L"KHENCHLA41", L"SOUK AHRASS", L"TIPAZA", L"MILA", L"AÏN DEFLA", L"NÂAMA", L"AÏN TEMOUCHENT",
+					L"GHARDAÏA", L"RELIZANE"
+			});
+			this->comboBox2->Location = System::Drawing::Point(12, 158);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(143, 21);
+			this->comboBox2->TabIndex = 42;
 			// 
 			// MyForm1
 			// 
@@ -403,7 +480,11 @@ namespace gestion {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(610, 350);
+			this->ClientSize = System::Drawing::Size(607, 426);
+			this->Controls->Add(this->comboBox2);
+			this->Controls->Add(this->label10);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button5);
@@ -454,55 +535,59 @@ namespace gestion {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ condatabase = gcnew SqlConnection(constring);
-		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
+		if (textBox1->Text == "" || textBox2->Text == "" || textBox3->Text == "" || textBox4->Text == "" || textBox5->Text == "" || textBox6->Text == "") {
 			MessageBox::Show("vous devez remplir tous les champs");
 		}
 		else {
-		String^ nom = textBox1->Text;
-		String^ prenom = textBox2->Text;
-		String^ adresseL = textBox3->Text;
-		String^ adresseF = textBox4->Text;
-		String^ date = Convert::ToDateTime(textBox5->Text).ToString("yyyy-MM-dd");
-		String^ date2 = Convert::ToDateTime(textBox6->Text).ToString("dd-MM-yyyy");
+			String^ nom = textBox1->Text;
+			String^ prenom = textBox2->Text;
+			String^ vileL = comboBox1->Text;
+			String^ adresseL = textBox3->Text;
+			String^ vileF = comboBox2->Text;
+			String^ adresseF = textBox4->Text;
+			String^ date = Convert::ToDateTime(textBox5->Text).ToString("yyyy-MM-dd");
+			String^ date2 = Convert::ToDateTime(textBox6->Text).ToString("dd-MM-yyyy");
 
-		SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO  client (Nom_c, Prenom_c , Date_De_Naissaince , Date_Premier_Achat, Adresse_Livraison, Adresse_Facturation ) values('" + nom + "','" + prenom + "','" + date + "','" + date2 + "','" + adresseF + "','" + adresseL + "');", condatabase);
-				SqlDataReader^ myReader;
+			SqlCommand^ cmdDataBase = gcnew SqlCommand("INSERT INTO  client (Nom_c, Prenom_c , Date_De_Naissaince , Date_Premier_Achat, Adresse_Livraison, Adresse_Facturation ) values('" + nom + "','" + prenom + "','" + date + "','" + date2 + "','" +vileL+", "+ adresseL + "','"+vileF+", "+ adresseF + "');", condatabase);
+			SqlDataReader^ myReader;
 
 
-				try {
-					condatabase->Open();
-					myReader = cmdDataBase->ExecuteReader();
-					MessageBox::Show("client  enregistré :'D");
+			try {
+				condatabase->Open();
+				myReader = cmdDataBase->ExecuteReader();
+				MessageBox::Show("client  enregistré :'D");
+			}
+			catch (Exception^ ex) {
+				if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
+					MessageBox::Show("vous devez remplir tous les champs");
 				}
-				catch (Exception^ ex) {
-					if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
-						MessageBox::Show("vous devez remplir tous les champs");
-					}
 
-				}
+			}
 
 
-			
-			
+
+
 		}
-		
+
 
 
 	}
 
-
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (MessageBox::Show("Êtes vous sûr de vouloir continuer ?", "Warning", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
+			String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+			SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
-		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
-		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
+			String^ ID = textBox7->Text;
+			SqlCommand^ cmdDataBase = gcnew SqlCommand("DELETE FROM client WHERE Num_c = '" + ID + "' ", conDataBase);
 
-		String^ ID = textBox7->Text;
-		SqlCommand^ cmdDataBase = gcnew SqlCommand("DELETE FROM client WHERE Num_c = '" + ID + "' ", conDataBase);
+			conDataBase->Open();
+			SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
+			MessageBox::Show("Client  supprimé :'D");
+			conDataBase->Close();
+		}else{}
 
-		conDataBase->Open();
-		SqlDataReader^ myReader = cmdDataBase->ExecuteReader();
-		MessageBox::Show("Client  supprimé :'D");
-		conDataBase->Close();
+		
 	}
 
 
@@ -579,11 +664,7 @@ namespace gestion {
 
 	}
 
-
-
-
-
-	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 		SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM client", conDataBase);
@@ -602,14 +683,17 @@ namespace gestion {
 		textBox5->Text = "";
 		textBox6->Text = "";
 		textBox7->Text = "";
-	
+
 	}
-private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-}
-private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	retour->Show();
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+	private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		this->Hide();
+		retour->Show();
+	}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
+	
