@@ -509,7 +509,7 @@ namespace gestion {
 	private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_P;Integrated Security=True";
 		SqlConnection^ condatabase = gcnew SqlConnection(constring);
 		
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox8->Text == "") {
@@ -546,7 +546,7 @@ namespace gestion {
 		groupBox2->Hide();
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_P;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 		SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM Personnel", conDataBase);
 		DataTable^ data = gcnew DataTable();
@@ -557,7 +557,7 @@ namespace gestion {
 		dataGridView1->DataSource = bindingSource1;
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_P;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 		String^ nom_p = textBox1->Text;
@@ -585,7 +585,7 @@ namespace gestion {
 	}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ id = textBox7->Text;
-	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD_P;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 	SqlCommand^ cmdDataBase = gcnew SqlCommand("SELECT * FROM Personnel WHERE ID = '" + id + "' ", conDataBase);
@@ -612,7 +612,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (MessageBox::Show("Êtes vous sûr de vouloir continuer ?", "Warning", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_P;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 		String^ ID = textBox7->Text;

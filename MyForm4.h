@@ -358,7 +358,7 @@ namespace gestion {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		String^ constring = "Data Source=(local);Initial Catalog=BDD_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_P;Integrated Security=True";
 		SqlConnection^ condatabase = gcnew SqlConnection(constring);
 
 
@@ -480,7 +480,7 @@ namespace gestion {
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		String^ constring = "Data Source=(local);Initial Catalog=BDD_PROJET;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_P;Integrated Security=True";
 		SqlConnection^ condatabase = gcnew SqlConnection(constring);
 
 		String^ nomclient = textBox7->Text;
