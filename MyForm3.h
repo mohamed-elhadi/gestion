@@ -467,7 +467,7 @@ namespace gestion {
 	private: System::Void MyForm3_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_PROJET;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 		
 		if (textBox1->Text == "" && textBox2->Text == "" && textBox3->Text == "" && textBox4->Text == "" && textBox5->Text == "" && textBox6->Text == "") {
@@ -501,7 +501,7 @@ namespace gestion {
 		}
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlDataAdapter^ adapter = gcnew SqlDataAdapter("SELECT * FROM Article", conDataBase);
 	DataTable^ data = gcnew DataTable();
@@ -514,7 +514,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ reference = textBox1->Text;
-	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	SqlCommand^ cmdDataBase = gcnew SqlCommand("SELECT * FROM Article WHERE ReferenceArticle = '" + reference + "' ", conDataBase);
 	conDataBase->Open();
@@ -544,7 +544,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+	String^ constring = "Data Source=(local);Initial Catalog=BDD_PROJET;Integrated Security=True";
 	SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 	
 	String^ reference = textBox1->Text;
@@ -576,7 +576,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (MessageBox::Show("Êtes vous sûr de vouloir continuer ?", "Warning", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes) {
-		String^ constring = "Data Source=(local);Initial Catalog=BDD;Integrated Security=True";
+		String^ constring = "Data Source=(local);Initial Catalog=BDD_PROJET;Integrated Security=True";
 		SqlConnection^ conDataBase = gcnew SqlConnection(constring);
 
 

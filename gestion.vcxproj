@@ -155,6 +155,7 @@
     <ClInclude Include="Pch.h" />
     <ClInclude Include="Personnel.h" />
     <ClInclude Include="Responsable.h" />
+    <ClInclude Include="test.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
